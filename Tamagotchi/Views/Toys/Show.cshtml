@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Tamagotchi</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+</head>
+
+<body class="text-center bg-dark text-white">
+    <h1>@Model.Name</h1>
+    <div class="mt-5">
+        <p class="h5 mt-3">FoodLevel - @Model.FoodAmount</p>
+        <p class="h5">RestLevel - @Model.RestAmount</p>
+        <p class="h5">HappinessLevel - @Model.HappinessAmount</p>
+        <div class="row justify-content-center">
+             <form action="/tamagotchi/feed/@Model.Id" method="post" class = "ml-5">
+                <button class="btn btn-primary" name="button">Feed</button>
+            </form>
+             <form action="/tamagotchi/rest/@Model.Id" method="post" class = "ml-5">
+                <button class="btn btn-danger" name="button">Rest</button>
+            </form>
+             <form action="/tamagotchi/play/@Model.Id" method="post" class = "ml-5">
+                <button class="btn btn-success" name="button">PlayWith</button>
+            </form>
+        </div>
+        <p class = "h5 mt-3"><a href="/tamagotchi">See your list of tamagotchi</a></p>
+    </div>
+</body>
+
+</html>
